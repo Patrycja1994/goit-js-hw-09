@@ -23,18 +23,18 @@ function createPromise(position, delay) {
 function startPromises(e) {
   e.preventDefault();
    let step = Number(delayStep.value);
-   let delay = Number(firstDelay.value);
+   let stepdelay = Number(firstDelay.value);
 
 for ( let i = 1; i < amountInput.value; i++) {
-createPromise(i, step)   
+createPromise(i, stepdelay)   
 .then(({ position, delay }) => {     
-  Notify.success(`✅ Fulfilled promgise ${position} in ${delay}ms`);   
+  Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);   
 })   
 .catch(({ position, delay }) => {    
    Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);   
 });
 
-  step += delay;
+  stepdelay += step;
   }
 };
 
