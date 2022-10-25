@@ -15,15 +15,15 @@ function createPromise(position, delay) {
       resolve({position,delay});
     } else {
       reject({position,delay});
-    }
+    } 
   }, delay);
   });
 }
 
 function startPromises(e) {
   e.preventDefault();
-   let step = delayStep.value;
-   let delay = firstDelay.value;
+   let step = Number(delayStep.value);
+   let delay = Number(firstDelay.value);
 
 for ( let i = 1; i < amountInput.value; i++) {
 createPromise(i, step)   
