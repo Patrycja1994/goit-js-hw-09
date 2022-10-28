@@ -25,7 +25,7 @@ function startPromises(e) {
    let step = Number(delayStep.value);
    let stepdelay = Number(firstDelay.value);
 
-for ( let i = 1; i < amountInput.value; i++) {
+for ( let i = 1; i <= amountInput.value; i++) {
 createPromise(i, stepdelay)   
 .then(({ position, delay }) => {     
   Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);   
@@ -36,7 +36,7 @@ createPromise(i, stepdelay)
 
   stepdelay += step;
   }
-};
+}; 
 
 form.addEventListener ('submit',startPromises);
 
